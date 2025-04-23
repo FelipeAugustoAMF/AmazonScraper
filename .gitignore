@@ -1,0 +1,74 @@
+# ─── System files ───────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── IDEs / editors ─────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln*
+*.vcxproj*
+
+# ─── Environment variables ──────────────────────────────────────────────────
+.env
+.env.*
+.envrc
+scripts/env.local
+
+# ─── Logs ───────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+bun-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ─── Dependencies ──────────────────────────────────────────────────────────
+node_modules/
+**/node_modules/
+bun.lockb
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# ─── Build / distribution ──────────────────────────────────────────────────
+dist/
+dist-ssr/
+build/
+build-*/
+out/
+*.out.js
+*.out.refresh.js
+
+# ─── Caches / temporary files ───────────────────────────────────────────────
+.cache/
+.tmp/
+.pnpm-store
+.eslintcache
+.parcel-cache
+
+# ─── Vite / front-end ───────────────────────────────────────────────────────
+/docs/.vitepress/cache
+explorations/
+playground-temp/
+temp/
+TODOs.md
+/packages/vite/LICENSE
+
+# ─── Profiling / metadata ───────────────────────────────────────────────────
+*.cpuprofile
+*.tsbuildinfo
+
+# ─── Test coverage ──────────────────────────────────────────────────────────
+coverage/
+cover/
+coverv/
+kcov-out/
+test-report.json
+test-report.md
+
+# ─── Other generated ─────────────────────────────────────────────────────────
+*.local
+*.generated.ts
+
