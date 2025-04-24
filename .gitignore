@@ -10,6 +10,10 @@ Thumbs.db
 *.njsproj
 *.sln*
 *.vcxproj*
+# exceções para VSCode
+!.vscode/extensions.json
+# arquivos temporários de editor
+*.sw?
 
 # ─── Environment variables ──────────────────────────────────────────────────
 .env
@@ -23,6 +27,9 @@ npm-debug.log*
 bun-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
+yarn-error.log*
+lerna-debug.log*
+logs
 
 # ─── Dependencies ──────────────────────────────────────────────────────────
 node_modules/
@@ -71,4 +78,3 @@ test-report.md
 # ─── Other generated ─────────────────────────────────────────────────────────
 *.local
 *.generated.ts
-
