@@ -1,3 +1,6 @@
+// this is the entry point of the application
+// it is responsible for setting up the server
+
 import express from "express";
 import cors from "cors";
 import { errorHandler } from "./midlewares/error-handler";
