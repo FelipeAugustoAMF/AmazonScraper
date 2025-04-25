@@ -5,8 +5,9 @@
 import './style.css';
 import { SearchBar } from './components/SearchBar/SearchBar';
 import { Loader } from './components/Loader/Loader';
-import { Api } from './utils/api';
 import { ProductList } from './components/ProductList/ProductList';
+import { ErrorMessageBox } from './components/ErrorMessageBox/ErrorMessageBox';
+import { Api } from './utils/api';
 
 const root = document.getElementById('app');
 
@@ -15,6 +16,8 @@ const title = document.createElement('h1');
 title.textContent = 'Amazon Product Scraper';
 title.style.textAlign = 'center';
 title.style.fontSize = '2rem';
+title.style.marginTop = '20px';
+title.style.marginBottom = '10px';
 root.appendChild(title);
 
 // creates the loader and hides it
@@ -22,19 +25,21 @@ const loader = Loader();
 loader.classList.add('hidden');
 root.appendChild(loader);
 
-// created the results container
+// creates the results container
 const resultsSection = document.createElement('div');
 resultsSection.className = 'results-section';
 root.appendChild(resultsSection);
 
-// create a search bar using loader and results
+// creates a search bar using loader and results
 const searchBar = SearchBar(async term => {
   // clean any previous message
   resultsSection.innerHTML = '';
   resultsSection.style.textAlign = 'center';
 
   if (!term) {
-    resultsSection.innerHTML = '<p class="info">Digite algo para buscar</p>';
+    const errorMessage = ErrorMessageBox('Digite algo para buscar');
+    resultsSection.innerHTML = '';
+    resultsSection.appendChild(errorMessage);
     return;
   }
 
@@ -50,9 +55,12 @@ const searchBar = SearchBar(async term => {
     // if any error occurs during the api call, shows the error message
     loader.classList.add('hidden');
     console.error(err);
-    resultsSection.innerHTML = `<p class="error">Erro: ${err.message || err}</p>`;
+
+    const messageBox = ErrorMessageBox(err.message || err);
+    resultsSection.innerHTML = '';
+    resultsSection.appendChild(messageBox);
   }
 });
 
-// insere a barra *entre* o título e o loader
+// inserts the search bar between the title and the loader
 root.insertBefore(searchBar, loader);

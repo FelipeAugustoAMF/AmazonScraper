@@ -8,7 +8,7 @@ export const SearchBar = (onSearch) => {
     const input = document.createElement('input');
     input.type = 'text';
     input.className = 'input';
-    input.placeholder = 'Enter product keyword...';
+    input.placeholder = 'Digite o nome do produto';
     input.autocomplete = 'off';
 
     const button = document.createElement('button');

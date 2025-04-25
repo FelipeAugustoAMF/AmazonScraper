@@ -1,6 +1,7 @@
 // this component is responsible for rendering the results of the search
 // and displaying them in a grid format. It takes an array of products and a container element as arguments.
 
+import { ErrorMessageBox } from "../ErrorMessageBox/ErrorMessageBox";
 import "./ProductList.css";
 
 export function ProductList(products, container) {
@@ -16,10 +17,19 @@ export function ProductList(products, container) {
     // clean the container
     containerEl.innerHTML = '';
 
+    // // if there are no products, show a message
+    // if (!products || products.length === 0) {
+    //     containerEl.innerHTML = '<p class="no-results">Nenhum produto encontrado.</p>';
+    //     containerEl.style.textAlign = 'center';
+    //     return;
+    // }
+
     // if there are no products, show a message
     if (!products || products.length === 0) {
-        containerEl.innerHTML = '<p class="no-results">Nenhum produto encontrado.</p>';
-        containerEl.style.textAlign = 'center';
+        containerEl.innerHTML = "";
+        containerEl.appendChild(
+            ErrorMessageBox("Nenhum produto encontrado")
+        );
         return;
     }
 
@@ -55,7 +65,6 @@ export function ProductList(products, container) {
         ratingEl.className = 'product-rating';
         ratingEl.innerHTML = `Nota:<strong>${prod.rating || " — "}</strong>`;
         info.appendChild(ratingEl);
-
 
         // reviews count
         const revEl = document.createElement('p');
