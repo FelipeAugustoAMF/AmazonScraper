@@ -1,4 +1,4 @@
-// the controllers are what control the flow of requests and responses to a given resource
+// the controllers are what control the flow of requests and responses related to given resource
 // in this case, the resource is the scrape endpoint
 // if this API were to grow, we would have a controller for each resource
 
