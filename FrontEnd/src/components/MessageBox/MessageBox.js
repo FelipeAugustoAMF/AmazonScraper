@@ -1,3 +1,5 @@
+// this component shows a message to the user, it can be used to show errors or information
+
 import './MessageBox.css';
 
 export const MessageBox = (text, isError = false) => {
