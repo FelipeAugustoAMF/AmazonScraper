@@ -17,13 +17,6 @@ export function ProductList(products, container) {
     // clean the container
     containerEl.innerHTML = '';
 
-    // // if there are no products, show a message
-    // if (!products || products.length === 0) {
-    //     containerEl.innerHTML = '<p class="no-results">Nenhum produto encontrado.</p>';
-    //     containerEl.style.textAlign = 'center';
-    //     return;
-    // }
-
     // if there are no products, show a message
     if (!products || products.length === 0) {
         containerEl.innerHTML = "";
