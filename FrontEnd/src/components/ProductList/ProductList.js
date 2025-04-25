@@ -1,7 +1,7 @@
 // this component is responsible for rendering the results of the search
 // and displaying them in a grid format. It takes an array of products and a container element as arguments.
 
-import { ErrorMessageBox } from "../ErrorMessageBox/ErrorMessageBox";
+import { MessageBox } from "../MessageBox/MessageBox";
 import "./ProductList.css";
 
 export function ProductList(products, container) {
@@ -21,7 +21,7 @@ export function ProductList(products, container) {
     if (!products || products.length === 0) {
         containerEl.innerHTML = "";
         containerEl.appendChild(
-            ErrorMessageBox("Nenhum produto encontrado")
+            MessageBox("Nenhum produto encontrado", false)
         );
         return;
     }

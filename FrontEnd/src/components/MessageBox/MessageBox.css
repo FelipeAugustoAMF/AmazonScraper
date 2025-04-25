@@ -1,9 +1,9 @@
-.error-message-box {
+.message-box {
     padding: 20px;
     max-width: 650px;
 
     margin: 0 auto;
-    border: 1px solid rgb(253, 82, 82);
+    border: 1px solid grey;
     border-radius: 5px;
     word-wrap: break-word;
 }
