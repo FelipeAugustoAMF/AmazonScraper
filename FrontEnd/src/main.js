@@ -6,7 +6,7 @@ import './style.css';
 import { SearchBar } from './components/SearchBar/SearchBar';
 import { Loader } from './components/Loader/Loader';
 import { ProductList } from './components/ProductList/ProductList';
-import { ErrorMessageBox } from './components/ErrorMessageBox/ErrorMessageBox';
+import { MessageBox } from './components/MessageBox/MessageBox';
 import { Api } from './utils/api';
 
 const root = document.getElementById('app');
@@ -37,7 +37,7 @@ const searchBar = SearchBar(async term => {
   resultsSection.style.textAlign = 'center';
 
   if (!term) {
-    const errorMessage = ErrorMessageBox('Digite algo para buscar');
+    const errorMessage = MessageBox('Digite algo para buscar', true);
     resultsSection.innerHTML = '';
     resultsSection.appendChild(errorMessage);
     return;
@@ -56,7 +56,7 @@ const searchBar = SearchBar(async term => {
     loader.classList.add('hidden');
     console.error(err);
 
-    const messageBox = ErrorMessageBox(err.message || err);
+    const messageBox = MessageBox(err.message || err, true);
     resultsSection.innerHTML = '';
     resultsSection.appendChild(messageBox);
   }
